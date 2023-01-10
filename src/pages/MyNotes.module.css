@@ -1,0 +1,30 @@
+.new-note {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: #FF650E;
+}
+
+.new-note .new-btn {
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+.new-note .new-btn:hover {
+    background-color: #FF650E;
+    color: white;
+    border-color: #FF650E;
+}
+
+.new-note .new-btn:active {
+    transform: scale(0.96);
+}
+
+.all-notes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 100px;
+}

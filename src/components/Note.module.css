@@ -1,0 +1,33 @@
+.note-container {
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    border-radius: 10px;
+    width: 25%;
+    cursor: pointer;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+.note-container h2 {
+    text-align: center;
+    margin: 0;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.controls .edit button {
+    margin-right: 10px;
+}
+
+.controls .edit button:hover {
+    background-color: rgb(209, 209, 11);
+    color: white;
+}
+
+.controls .delete button:hover {
+    background-color: red;
+    color: white;
+}

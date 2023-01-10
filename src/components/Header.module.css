@@ -1,0 +1,44 @@
+.nav-container {
+    background-color: blueviolet;
+    width: 100%;
+    display: flex;
+}
+
+.logo {
+    padding: 20px 0px 20px 60px;
+}
+
+.logo img {
+    width: 75px;
+    height: auto;
+}
+
+.menu-container {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 60px;
+}
+
+.menu-container ul {
+    list-style: none;
+    display: flex;
+}
+
+.menu-container ul li {
+    color: #FF650E;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.menu-container ul li:last-child {
+    margin-right: 0;
+}
+
+.menu-container ul li:hover {
+    color: white;
+    transform: scale(1.4);
+     /* border-bottom: 2px solid white; */
+}
