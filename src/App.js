@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import MyNotes from './pages/MyNotes';
 import RegisterPage from './pages/RegisterPage';
+import LoginPage from './pages/LoginPage';
 
 const notes = [
   {
@@ -41,7 +42,8 @@ function App() {
     <div className="App">
       <Header/> 
       {/* <MyNotes notes={notes} />      */}
-      <RegisterPage />
+      {/* <RegisterPage /> */}
+      <LoginPage />
     </div>
   );
 }

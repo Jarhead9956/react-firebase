@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.page-title {
+    text-transform: uppercase;
+    color: #FF7800;
+    font-size: 2.5em;
+}
