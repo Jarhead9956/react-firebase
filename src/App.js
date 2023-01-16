@@ -41,9 +41,9 @@ function App() {
   return (
     <div className="App">
       <Header/> 
-      {/* <MyNotes notes={notes} />      */}
+      <MyNotes notes={notes} />     
       {/* <RegisterPage /> */}
-      <LoginPage />
+      {/* <LoginPage /> */}
     </div>
   );
 }
