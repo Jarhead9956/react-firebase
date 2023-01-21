@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import {db} from '../firebase-config';
+import {collection, addDoc} from 'firebase/firestore';
 
 import Button from "./Button";
 
@@ -7,18 +9,29 @@ import styles from './AddNoteForm.module.css';
 const AddNoteForm = (props) => {
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredMessage, setEnteredMessage] = useState('');
+    const noteCollectionRef = collection(db, 'notes');
     
     const enteredTitlehandler = (event) => {
-        setEnteredTitle(event.target.value)
-        console.log(event.target.value)
+        setEnteredTitle(event.target.value);
     };
     const enteredMessageHandler = (event) => {
-        setEnteredMessage(event.target.value)
-        console.log(event.target.value)
+        setEnteredMessage(event.target.value);
+    };
+
+    const createNote = (event) => {
+        event.preventDefault();
+        const newNote = {
+            title: enteredTitle,
+            text: enteredMessage
+        };
+        
+        props.onCreateNote(newNote);
+        setEnteredTitle('');
+        setEnteredMessage('');
     };
 
     return (
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={createNote}>
             <div className={styles.title}>
                 <label>{props.title}</label>
                 <input

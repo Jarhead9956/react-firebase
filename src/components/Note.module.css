@@ -5,6 +5,7 @@
     cursor: pointer;
     margin-bottom: 40px;
     padding: 20px;
+    overflow-wrap: break-word;
 }
 
 .note-container h2 {

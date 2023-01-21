@@ -5,7 +5,7 @@ import AddNoteForm from "../components/AddNoteForm";
 
 import styles from "./MyNotes.module.css";
 
-const MyNotes = ({notes}) => {
+const MyNotes = (props) => {
     const [showAddNoteBtn, setShowAddNote] = useState(false);
 
     const showAddNoteBtnHandler = () => {
@@ -31,13 +31,15 @@ const MyNotes = ({notes}) => {
                         type = 'text'
                         row = '10'
                         onHideAddNoteBtn = {hideAddNoteBtnHandler}
+                        onCreateNote= {props.onCreateNote}
                     />
                 }
             </div>
             <div className={styles["all-notes"]}>
-                {notes.map((note) => <Note
+                {props.notes.map((note) => <Note
                     key={note.id}
-                    content={note} 
+                    content={note}
+                    onDeleteNote= {props.onDeleteNote} 
                 />
                 )}
             </div>
