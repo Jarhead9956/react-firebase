@@ -1,0 +1,44 @@
+.backdrop {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: black;
+    opacity: 0.6;
+}
+
+.overlay {
+    z-index: 100;
+    position: fixed;
+    top: 30vh;
+    left: 25%;
+    width: 50%;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.options {
+    display: flex;
+}
+
+.cancel-btn {
+    width: 50%;
+}
+
+.cancel-btn button {
+    width: 100%;
+    background-color: rgb(15, 194, 15);
+}
+
+.del-btn {
+    width: 50%;
+}
+
+.del-btn button {
+    width: 100%;
+    background-color: red;
+}

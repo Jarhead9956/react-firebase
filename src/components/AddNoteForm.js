@@ -26,6 +26,7 @@ const AddNoteForm = (props) => {
         };
         
         props.onCreateNote(newNote);
+        
         setEnteredTitle('');
         setEnteredMessage('');
     };
