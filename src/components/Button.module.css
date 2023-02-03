@@ -7,3 +7,15 @@
 .button:active {
     transform: scale(0.97);
 }
+
+.button:disabled {
+    transform: scale(1);
+    background-color: rgb(187, 186, 186);
+    color: white;
+}
+
+.button:disabled:hover {
+    transform: scale(1);
+    background-color: rgb(187, 186, 186);
+    color: white;
+}

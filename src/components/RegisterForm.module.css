@@ -17,3 +17,11 @@
     color: #8A2BE2;
     cursor: pointer;
 }
+
+.email-error {
+    color: red;
+}
+
+.password-error {
+    color: red;
+}

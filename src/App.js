@@ -39,12 +39,12 @@ function App() {
   return (
     <div className="App">
       <Header/> 
-      <MyNotes 
+      {/* <MyNotes 
         notes={notes}
         onCreateNote= {createNoteHandler} 
         onDeleteNote= {deleteNoteHandler}  
-      />     
-      {/* <RegisterPage /> */}
+      />      */}
+      <RegisterPage />
       {/* <LoginPage /> */}
     </div>
   );
