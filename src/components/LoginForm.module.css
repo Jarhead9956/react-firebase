@@ -17,3 +17,7 @@
     color: #8A2BE2;
     cursor: pointer;
 }
+
+.error {
+    color:red;
+}

@@ -44,8 +44,8 @@ function App() {
         onCreateNote= {createNoteHandler} 
         onDeleteNote= {deleteNoteHandler}  
       />      */}
-      <RegisterPage />
-      {/* <LoginPage /> */}
+      {/* <RegisterPage /> */}
+      <LoginPage />
     </div>
   );
 }

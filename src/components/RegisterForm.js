@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 
 import Input from "./Input";
 import Button from "./Button";
+import { emailValidationRegExp } from '../helpers/regExp'
 
 import styles from './RegisterForm.module.css';
 
@@ -19,7 +20,7 @@ const RegisterForm = () => {
             let emailIsValid = false;
             let passwordIsValid = false;
     
-            if(enteredEmail.includes('@')) {
+            if(emailValidationRegExp.test(enteredEmail)) {
                 emailIsValid = true;
             };
     
@@ -39,7 +40,8 @@ const RegisterForm = () => {
     };
 
     const blurEnteredEmailHandler = (value) => {
-        setEnteredEmailIsInvalid(!value.includes('@'))
+        const emailValidation = emailValidationRegExp.test(value);
+        setEnteredEmailIsInvalid(!emailValidation)
     };
 
     const changeEnteredPasswordHandler = (value) => {
