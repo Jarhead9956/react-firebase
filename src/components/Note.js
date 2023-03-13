@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { Link } from 'react-router-dom';
 
 import Modal from "../layout/modal";
 import Button from "./Button";
@@ -25,8 +26,10 @@ const Note = (props) => {
                 onConfirm = { () => props.onDeleteNote(props.content.id) }
                 onCancel = {hideModalHandler}
             />}
-            <h2>{props.content.title}</h2>
-            <p>{shortText}</p>
+            <Link to={`/${props.content.id}`}>
+                <h2>{props.content.title}</h2>
+                <p>{shortText}</p>
+            </Link>
             <div className={styles.controls}>
                 <Button 
                     title='Edit'

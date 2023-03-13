@@ -26,11 +26,25 @@
     display: flex;
 }
 
-.menu-container ul li {
+.menu-container ul li  {
     color: #FF650E;
     text-transform: uppercase;
     cursor: pointer;
     margin-right: 30px;
+}
+
+.menu-container ul li a {
+    color: #FF650E;
+    text-decoration: none;
+}
+
+.menu-container ul li a:hover {
+    color: white;
+}
+
+.menu-container ul li a.active {
+    text-decoration: underline;
+    color: white;
 }
 
 .menu-container ul li:last-child {

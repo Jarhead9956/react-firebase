@@ -1,4 +1,6 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import {collection, getDocs, addDoc, deleteDoc, doc} from 'firebase/firestore';
+import {db} from '../firebase-config';
 
 import Note from "../components/Note";
 import Container from "../layout/Container";
@@ -8,6 +10,32 @@ import styles from "./MyNotes.module.css";
 
 const MyNotes = (props) => {
     const [showAddNoteBtn, setShowAddNote] = useState(false);
+    const [notes, setNotes] = useState([]);
+    const notesCollectioRef = collection(db, 'notes')
+
+    useEffect(() => {
+        const getNotes = async () => {
+          const data = await getDocs(notesCollectioRef);
+          setNotes(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
+        };
+    
+        getNotes()
+    }, []);
+
+    const createNoteHandler = async (newNote) => {
+        await addDoc(notesCollectioRef, newNote);
+        const data = await getDocs(notesCollectioRef);
+        setNotes(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
+    };
+    
+    const deleteNoteHandler = async (id) => {
+        const noteDoc = doc(db, 'notes', id);
+        await deleteDoc(noteDoc);
+    
+        const newNotes = notes.filter(note => note.id !== id)
+        setNotes(newNotes)
+        console.log(newNotes)
+    };
 
     const showAddNoteBtnHandler = () => {
         setShowAddNote(true);
@@ -32,15 +60,15 @@ const MyNotes = (props) => {
                         type = 'text'
                         row = '10'
                         onHideAddNoteBtn = {hideAddNoteBtnHandler}
-                        onCreateNote= {props.onCreateNote}
+                        onCreateNote= {createNoteHandler}
                     />
                 }
             </div>
             <div className={styles["all-notes"]}>
-                {props.notes.map((note) => <Note
+                {notes.map((note) => <Note
                     key={note.id}
                     content={note}
-                    onDeleteNote= {props.onDeleteNote} 
+                    onDeleteNote= {deleteNoteHandler} 
                 />
                 )}
             </div>
